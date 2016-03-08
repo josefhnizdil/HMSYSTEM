@@ -193,6 +193,8 @@ public class JTicketsBagShared extends JTicketsBag {
         m_jDelTicket = new javax.swing.JButton();
         m_jListTickets = new javax.swing.JButton();
         m_jHold = new javax.swing.JButton();
+        m_jTables = new javax.swing.JButton();
+
 
         setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         setLayout(new java.awt.BorderLayout());
@@ -264,6 +266,23 @@ public class JTicketsBagShared extends JTicketsBag {
         });
         jPanel1.add(m_jHold);
 
+
+        //nové tla?ítko tables
+        m_jTables.setFont(new java.awt.Font("Arial", 0, 11));
+        m_jTables.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/tables.png")));
+        m_jTables.setToolTipText("Rychlý p?ístup ke stol?m");
+        m_jTables.setFocusPainted(false);
+        m_jTables.setFocusable(false);
+        m_jTables.setMargin(new java.awt.Insets(0, 4, 0, 4));
+        m_jTables.setMaximumSize(new java.awt.Dimension(50, 40));
+        m_jTables.setMinimumSize(new java.awt.Dimension(50, 40));
+        m_jTables.setPreferredSize(new java.awt.Dimension(50, 40));
+        m_jTables.setRequestFocusEnabled(false);
+
+        jPanel1.add(m_jTables);
+
+
+
         add(jPanel1, java.awt.BorderLayout.WEST);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -323,6 +342,8 @@ public class JTicketsBagShared extends JTicketsBag {
     private javax.swing.JButton m_jHold;
     private javax.swing.JButton m_jListTickets;
     private javax.swing.JButton m_jNewTicket;
+    private javax.swing.JButton m_jTables;
+
     // End of variables declaration//GEN-END:variables
     
 }

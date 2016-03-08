@@ -41,7 +41,7 @@ import javax.swing.*;
  * @author adrianromero
  */
 public class JRootApp extends JPanel implements AppView {
-
+    java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pos_messages");
     private AppProperties m_props;
     private Session session;     
     private DataLogicSystem m_dlSystem;
@@ -94,7 +94,7 @@ public class JRootApp extends JPanel implements AppView {
     public void actionPerformed(ActionEvent evt) {
             m_clock = getLineTimer();
             m_date = getLineDate();
-            m_jLblTitle.setText(l_CZ.Nazev);
+            m_jLblTitle.setText(bundle.getString("label.nadpis"));
 
             jLabel2.setText(" " + m_date + " " + m_clock);
         }
@@ -270,7 +270,7 @@ public class JRootApp extends JPanel implements AppView {
         String newText = m_props.getProperty("start.text");
         if (newText != null) {
             if (newText.equals("")){
-            jLabel1.setText(l_CZ.MainPageText);}
+            jLabel1.setText(bundle.getString("label.MainPageText"));}
             else{
             try {
             String newTextCode = new Scanner(new File(newText),"UTF-8").useDelimiter("\\A").next();
@@ -768,7 +768,7 @@ public class JRootApp extends JPanel implements AppView {
 
         m_jLblTitle.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         m_jLblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        m_jLblTitle.setText(l_CZ.Nazev);
+        m_jLblTitle.setText(bundle.getString("label.nadpis"));
         m_jPanelTitle.add(m_jLblTitle, java.awt.BorderLayout.CENTER);
 
         poweredby.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -796,7 +796,7 @@ public class JRootApp extends JPanel implements AppView {
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/unicenta.png"))); // NOI18N
-        jLabel1.setText(l_CZ.MainPageText);
+        jLabel1.setText(bundle.getString("label.MainPageText"));
         jLabel1.setAlignmentX(0.5F);
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel1.setMaximumSize(new java.awt.Dimension(800, 1024));

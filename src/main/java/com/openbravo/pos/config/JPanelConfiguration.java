@@ -16,7 +16,7 @@ import com.openbravo.pos.config.JPanelConfigCzechString;
 public class JPanelConfiguration extends JPanel implements JPanelView {
         
     private List<PanelConfig> m_panelconfig;
-
+    java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pos_messages");
     private JPanelConfigCzechString cz;
 
     private AppConfig config;
@@ -211,44 +211,44 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
         jPanelDatabase.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jPanelDatabase.setPreferredSize(new java.awt.Dimension(0, 400));
         jPanelDatabase.setLayout(new javax.swing.BoxLayout(jPanelDatabase, javax.swing.BoxLayout.LINE_AXIS));
-        jTabbedPane1.addTab(cz.ConfDB, jPanelDatabase);
+        jTabbedPane1.addTab(bundle.getString("labeltab.ConfDB"), jPanelDatabase);
 
         jPanelGeneral.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jPanelGeneral.setPreferredSize(new java.awt.Dimension(0, 400));
         jPanelGeneral.setLayout(new javax.swing.BoxLayout(jPanelGeneral, javax.swing.BoxLayout.LINE_AXIS));
-        jTabbedPane1.addTab(cz.MenuSet, jPanelGeneral);
+        jTabbedPane1.addTab(bundle.getString("labeltab.MenuSet"), jPanelGeneral);
 
         jPanelLocale.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jPanelLocale.setPreferredSize(new java.awt.Dimension(730, 400));
         jPanelLocale.setLayout(new javax.swing.BoxLayout(jPanelLocale, javax.swing.BoxLayout.LINE_AXIS));
-        jTabbedPane1.addTab(cz.LocSet, jPanelLocale);
+        jTabbedPane1.addTab(bundle.getString("labeltab.LocSet"), jPanelLocale);
 
         jPanelPayment.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jPanelPayment.setPreferredSize(new java.awt.Dimension(0, 400));
         jPanelPayment.setLayout(new javax.swing.BoxLayout(jPanelPayment, javax.swing.BoxLayout.LINE_AXIS));
-        jTabbedPane1.addTab(cz.PayMeth, jPanelPayment);
+        jTabbedPane1.addTab(bundle.getString("labeltab.PayMeth"), jPanelPayment);
 
         jPanelPeripheral.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jPanelPeripheral.setPreferredSize(new java.awt.Dimension(0, 400));
         jPanelPeripheral.setLayout(new javax.swing.BoxLayout(jPanelPeripheral, javax.swing.BoxLayout.LINE_AXIS));
-        jTabbedPane1.addTab(cz.HW, jPanelPeripheral);
+        jTabbedPane1.addTab(bundle.getString("labeltab.HW"), jPanelPeripheral);
 
         jPanelSystem.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jPanelSystem.setPreferredSize(new java.awt.Dimension(0, 400));
         jPanelSystem.setLayout(new javax.swing.BoxLayout(jPanelSystem, javax.swing.BoxLayout.LINE_AXIS));
-        jTabbedPane1.addTab(cz.SysSet, jPanelSystem);
+        jTabbedPane1.addTab(bundle.getString("labeltab.SysSet"), jPanelSystem);
 
         jPanelTicketSetup.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jPanelTicketSetup.setPreferredSize(new java.awt.Dimension(0, 400));
         jPanelTicketSetup.setLayout(new javax.swing.BoxLayout(jPanelTicketSetup, javax.swing.BoxLayout.LINE_AXIS));
-        jTabbedPane1.addTab(cz.SetTickets, jPanelTicketSetup);
+        jTabbedPane1.addTab(bundle.getString("labeltab.SetTickets"), jPanelTicketSetup);
 
         //P?idání panelu about + info o stavb? systému v?. upravy
 
         jPanelAbout.setFont(new java.awt.Font("", 0,12));
         jPanelAbout.setPreferredSize(new java.awt.Dimension(0, 400));
         jPanelAbout.setLayout(new javax.swing.BoxLayout(jPanelAbout, BoxLayout.LINE_AXIS));
-        jTabbedPane1.addTab(cz.About, jPanelAbout);
+        jTabbedPane1.addTab(bundle.getString("labeltab.About"), jPanelAbout);
 
         jbtnRestore.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jbtnRestore.setText(AppLocal.getIntString("Button.Factory")); // NOI18N

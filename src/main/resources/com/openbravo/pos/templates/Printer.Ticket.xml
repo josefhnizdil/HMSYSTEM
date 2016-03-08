@@ -194,9 +194,9 @@
 
 
 	<line></line>
-	<line><text align="center" length="42">Thank You</text></line>
-	<line><text align="center" length="42">Please Call Again</text></line>
-
+	<line><text align="center" length="42">Děkujeme</text></line>
+	<line><text align="center" length="42">za Vaši návštěvu</text></line>
+	<line><text align="center" length="42">Vytiskl hm Pokladní systém</text> </line>
 
 </ticket>
 

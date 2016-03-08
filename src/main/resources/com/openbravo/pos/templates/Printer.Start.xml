@@ -28,10 +28,10 @@
 <!--            <display animation="curtain"> -->
 <!--            <display animation="none"> -->
         <line>
-            <text>uniCenta oPOS</text>
+            <text>HM system pos</text>
         </line>
         <line>
-            <text>Point Of Sale</text>
+            <text>Elektronická pokladna</text>
         </line>
     </display>
 </output>
