@@ -25,7 +25,7 @@
 		<line><text align="left" length="15">Refund:</text><text>${ticket.printId()}</text></line>
 	#end
 	
-        <line><text align="left" length="15">Date:</text><text>${ticket.printDate()}</text></line>
+        <line><text align="left" length="15">Datum:</text><text>${ticket.printDate()}</text></line>
         <line><text align="left" length="15">Terminal: </text><text>${ticket.getHostname()}</text></line>                
 
 	#if ($ticket.getCustomer())
@@ -35,12 +35,12 @@
 	#end
 
 	#if (${tickettext.place} != ${place})
-		<line><text align="left" length="15">Table:</text><text>${place}</text></line>
+		<line><text align="left" length="15">Stůl:</text><text>${place}</text></line>
 	#end
         
-		<line><text align="left" length="15">Served by:</text><text>${ticket.printUser()}</text></line>
+		<line><text align="left" length="15">Obsluhoval:</text><text>${ticket.printUser()}</text></line>
 		<line></line>
-		<line><text align ="left" length="17">Item</text><text align ="right" length="8">Price</text><text align ="right" length="7">Qty</text><text align ="right" length="10">Value</text></line>
+		<line><text align ="left" length="17">Položka</text><text align ="right" length="8">Cena</text><text align ="right" length="7">Počet</text><text align ="right" length="10">Celkem</text> </line>
 		<line><text align="left" length="42">------------------------------------------</text></line>
                 
 #foreach ($ticketline in $ticket.getLines())
@@ -61,14 +61,14 @@
 	#end
 #end
 	<line><text align="left" length="42">------------------------------------------</text></line>
-	<line><text>Items count: </text><text align ="left" length="14">${ticket.printArticlesCount()}</text></line>
+	<line><text>Počet položek: </text><text align ="left" length="14">${ticket.printArticlesCount()}</text></line>
 	<line></line>
 	<line size="1"><text align ="left" length="16" bold="true">Total</text><text align ="right" length="26" bold="true">${ticket.printTotal()}</text></line>
 
 #foreach ($paymentline in $ticket.payments)
 
 	#if ($paymentline.name == "cash")
-		<line><text bold="true">Cash</text></line>
+		<line><text bold="true">Hotově</text></line>
 	        <line><text align="left" length="22">Tendered:</text><text align ="right" length="20">${paymentline.printPaid()}</text></line>
 	#end
           	

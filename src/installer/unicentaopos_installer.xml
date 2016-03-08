@@ -18,7 +18,7 @@
             <show>1</show>
             <desktopShortcutList>
                 <shortcut>
-                    <comment>uniCenta oPOS - Touch Friendly Point Of Sale</comment>
+                    <comment>HMSystem</comment>
                     <exec>sh ${installdir}/start.sh</exec>
                     <icon>${installdir}/unicentaopos.png</icon>
                     <name>uniCenta oPOS</name>
