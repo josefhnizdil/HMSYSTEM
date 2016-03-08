@@ -33,7 +33,12 @@ import com.openbravo.pos.ticket.TicketLineInfo;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
+import java.util.Timer;
 import javax.swing.*;
+
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -87,10 +92,11 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
      * @param panelticket */
 
     public JTicketsBagRestaurantMap(AppView app, TicketsEditor panelticket) {
-        
+
         super(app, panelticket);
-      
-        restDB = new  RestaurantDBUtils(app);        
+
+
+        restDB = new  RestaurantDBUtils(app);
         
         dlReceipts = (DataLogicReceipts) app.getBean("com.openbravo.pos.sales.DataLogicReceipts");
         dlSales = (DataLogicSales) m_App.getBean("com.openbravo.pos.forms.DataLogicSales");
@@ -126,8 +132,26 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         } 
         
 
-        initComponents(); 
-          
+        initComponents();
+
+        /** v pripade provozovny s jedním terminálem diasblovat tento segment kodu*/
+
+        ActionListener actionListener = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                m_PlaceClipboard = null;
+                customer = null;
+                loadTickets();
+                printState();
+            }
+        };
+        javax.swing.Timer timer = new javax.swing.Timer(4000, actionListener);
+        timer.start();
+
+
+
+
+
         // add the Floors containers
         if (m_afloors.size() > 1) {
             // A tab container for 2 or more floors
@@ -202,6 +226,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
     /**
      *
      */
+
     @Override
     public void activate() {
         
@@ -762,6 +787,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+
         m_jPanelMap = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -793,7 +819,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
             }
         });
         jPanel2.add(m_jbtnReservations);
-         */
+
         m_jbtnRefresh.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jbtnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/reload.png"))); // NOI18N
         m_jbtnRefresh.setText(AppLocal.getIntString("button.reloadticket")); // NOI18N
@@ -808,6 +834,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
             }
         });
         jPanel2.add(m_jbtnRefresh);
+         */
         jPanel2.add(m_jText);
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.LINE_START);
