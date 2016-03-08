@@ -28,6 +28,7 @@ import com.openbravo.pos.sales.DataLogicReceipts;
 import com.openbravo.pos.sales.JTicketsBag;
 import com.openbravo.pos.sales.SharedTicketInfo;
 import com.openbravo.pos.sales.TicketsEditor;
+import com.openbravo.pos.sales.restaurant.JTicketsBagRestaurantMap;
 import com.openbravo.pos.ticket.TicketInfo;
 import java.util.List;
 import java.util.UUID;
@@ -41,7 +42,12 @@ import javax.swing.SwingUtilities;
  * @author JG uniCenta
  */
 public class JTicketsBagShared extends JTicketsBag {
-    
+
+
+
+
+
+
     private String m_sCurrentTicket = null;
     private DataLogicReceipts dlReceipts = null;
     
@@ -50,14 +56,17 @@ public class JTicketsBagShared extends JTicketsBag {
      * @param app
      * @param panelticket */
     public JTicketsBagShared(AppView app, TicketsEditor panelticket) {
-        
+
         super(app, panelticket);
-        
+
+
+
         dlReceipts = (DataLogicReceipts) app.getBean("com.openbravo.pos.sales.DataLogicReceipts");
         
         initComponents();
         
     }
+
     
     /**
      *
@@ -260,6 +269,12 @@ public class JTicketsBagShared extends JTicketsBag {
         m_jTables.setMinimumSize(new java.awt.Dimension(50, 40));
         m_jTables.setPreferredSize(new java.awt.Dimension(50, 40));
         m_jTables.setRequestFocusEnabled(false);
+        m_jTables.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+            }
+        });
+
         jPanel1.add(m_jTables);
 
 
@@ -291,6 +306,10 @@ public class JTicketsBagShared extends JTicketsBag {
 
         add(jPanel1, java.awt.BorderLayout.WEST);
     }// </editor-fold>//GEN-END:initComponents
+
+
+
+
 
     private void m_jListTicketsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jListTicketsActionPerformed
 
