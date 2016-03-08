@@ -220,7 +220,7 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
         jPanelLocale.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jPanelLocale.setPreferredSize(new java.awt.Dimension(730, 400));
         jPanelLocale.setLayout(new javax.swing.BoxLayout(jPanelLocale, javax.swing.BoxLayout.LINE_AXIS));
-        jTabbedPane1.addTab(bundle.getString("labeltab.LocSet"), jPanelLocale);
+        /**jTabbedPane1.addTab(bundle.getString("labeltab.LocSet"), jPanelLocale);*/
 
         jPanelPayment.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jPanelPayment.setPreferredSize(new java.awt.Dimension(0, 400));

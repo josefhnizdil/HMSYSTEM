@@ -134,7 +134,8 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
 
         initComponents();
 
-        /** v pripade provozovny s jedním terminálem diasblovat tento segment kodu*/
+        /** v pripade provozovny s jedním terminálem disablovat tento segment kodu*/
+
 
         ActionListener actionListener = new ActionListener() {
             @Override
@@ -820,6 +821,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         });
         jPanel2.add(m_jbtnReservations);
 
+         /** tlaèítko pro obnovu ji¾ není potøeba.. pro podnik s vícero POS se automaticky obnovuje
         m_jbtnRefresh.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jbtnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/reload.png"))); // NOI18N
         m_jbtnRefresh.setText(AppLocal.getIntString("button.reloadticket")); // NOI18N
