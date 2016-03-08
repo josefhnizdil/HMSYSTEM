@@ -1,3 +1,4 @@
+//je to do píči ono
 //    uniCenta oPOS - Touch Friendly Point Of Sale
 //    Copyright (c) 2009-2015 uniCenta
 //    http://sourceforge.net/projects/unicentaopos
@@ -50,4 +51,3 @@ if ("cash".equals(p.getName())) {
     change = p.printChange();
 }
 
-UIManager.put("OptionPane.buttonFont", new FontUIResource(new Font(originalFont.getName(),originalFont.getStyle(),originalFont.getSize())));

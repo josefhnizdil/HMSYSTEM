@@ -34,10 +34,10 @@ CREATE TABLE ROLES (
     PRIMARY KEY (ID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 CREATE UNIQUE INDEX ROLES_NAME_INX ON ROLES(NAME);
-INSERT INTO ROLES(ID, NAME, PERMISSIONS) VALUES('0', 'Administrator role', $FILE{/com/openbravo/pos/templates/Role.Administrator.xml} );
-INSERT INTO ROLES(ID, NAME, PERMISSIONS) VALUES('1', 'Manager role', $FILE{/com/openbravo/pos/templates/Role.Manager.xml} );
-INSERT INTO ROLES(ID, NAME, PERMISSIONS) VALUES('2', 'Employee role', $FILE{/com/openbravo/pos/templates/Role.Employee.xml} );
-INSERT INTO ROLES(ID, NAME, PERMISSIONS) VALUES('3', 'Guest role', $FILE{/com/openbravo/pos/templates/Role.Guest.xml} );
+INSERT INTO ROLES(ID, NAME, PERMISSIONS) VALUES('0', 'Admin role', $FILE{/com/openbravo/pos/templates/Role.Administrator.xml} );
+INSERT INTO ROLES(ID, NAME, PERMISSIONS) VALUES('1', 'Mng role', $FILE{/com/openbravo/pos/templates/Role.Manager.xml} );
+INSERT INTO ROLES(ID, NAME, PERMISSIONS) VALUES('2', 'Zam. role', $FILE{/com/openbravo/pos/templates/Role.Employee.xml} );
+INSERT INTO ROLES(ID, NAME, PERMISSIONS) VALUES('3', 'Host role', $FILE{/com/openbravo/pos/templates/Role.Guest.xml} );
 
 CREATE TABLE PEOPLE (
     ID VARCHAR(255) NOT NULL,
@@ -52,11 +52,7 @@ CREATE TABLE PEOPLE (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 CREATE UNIQUE INDEX PEOPLE_NAME_INX ON PEOPLE(NAME);
 CREATE INDEX PEOPLE_CARD_INX ON PEOPLE(CARD);
-INSERT INTO PEOPLE(ID, NAME, APPPASSWORD, ROLE, VISIBLE, IMAGE) VALUES ('0', 'Administrator', NULL, '0', TRUE, NULL);
-INSERT INTO PEOPLE(ID, NAME, APPPASSWORD, ROLE, VISIBLE, IMAGE) VALUES ('1', 'Manager', NULL, '1', TRUE, NULL);
-INSERT INTO PEOPLE(ID, NAME, APPPASSWORD, ROLE, VISIBLE, IMAGE) VALUES ('2', 'Employee', NULL, '2', TRUE, NULL);
-INSERT INTO PEOPLE(ID, NAME, APPPASSWORD, ROLE, VISIBLE, IMAGE) VALUES ('3', 'Guest', NULL, '3', TRUE, NULL);
-
+INSERT INTO PEOPLE(ID, NAME, APPPASSWORD, ROLE, VISIBLE, IMAGE) VALUES ('0', 'Admin', NULL, '0', 1, NULL);
 
 CREATE TABLE RESOURCES (
     ID VARCHAR(255) NOT NULL,
@@ -135,8 +131,7 @@ INSERT INTO RESOURCES(ID, NAME, RESTYPE, CONTENT) VALUES('58', 'Ticket.TicketLin
 
 INSERT INTO RESOURCES(ID, NAME, RESTYPE, CONTENT) VALUES('59', 'Window.Logo', 1, $FILE{/com/openbravo/pos/templates/window.logo.png});
 INSERT INTO RESOURCES(ID, NAME, RESTYPE, CONTENT) VALUES('60', 'Window.Title', 0, $FILE{/com/openbravo/pos/templates/Window.Title.txt});
-INSERT INTO RESOURCES(ID, NAME, RESTYPE, CONTENT) VALUES('61', 'script.posapps', 0, $FILE{/com/openbravo/pos/templates/script.posapps.txt});
-INSERT INTO RESOURCES(ID, NAME, RESTYPE, CONTENT) VALUES('62', 'img.posapps', 1, $FILE{/com/openbravo/pos/templates/img.posapps.png});
+
 
 CREATE TABLE TAXCUSTCATEGORIES (
     ID VARCHAR(255) NOT NULL,
