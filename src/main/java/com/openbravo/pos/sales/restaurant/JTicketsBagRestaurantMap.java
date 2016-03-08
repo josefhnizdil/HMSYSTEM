@@ -793,7 +793,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
             }
         });
         jPanel2.add(m_jbtnReservations);
-
+         */
         m_jbtnRefresh.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         m_jbtnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/reload.png"))); // NOI18N
         m_jbtnRefresh.setText(AppLocal.getIntString("button.reloadticket")); // NOI18N
@@ -811,7 +811,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         jPanel2.add(m_jText);
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.LINE_START);
-        */
+
         m_jPanelMap.add(jPanel1, java.awt.BorderLayout.NORTH);
 
         add(m_jPanelMap, "map");
