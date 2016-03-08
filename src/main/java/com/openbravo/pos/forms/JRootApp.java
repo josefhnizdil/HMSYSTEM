@@ -9,7 +9,6 @@ import com.openbravo.data.loader.BatchSentence;
 import com.openbravo.data.loader.BatchSentenceResource;
 import com.openbravo.data.loader.Session;
 import com.openbravo.format.Formats;
-import com.openbravo.pos.config.JPanelConfigCzechString;
 import com.openbravo.pos.printer.DeviceTicket;
 import com.openbravo.pos.printer.TicketParser;
 import com.openbravo.pos.printer.TicketPrinterException;
@@ -21,7 +20,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
@@ -30,7 +28,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
-import java.util.List;
 import java.util.regex.Matcher;
 import javax.swing.*;
         
@@ -61,7 +58,7 @@ public class JRootApp extends JPanel implements AppView {
     private DeviceTicket m_TP;   
     private TicketParser m_TTP;
 
-    private JPanelConfigCzechString l_CZ;
+
     
     private Map<String, BeanFactory> m_aBeanFactories;
     

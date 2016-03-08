@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
-import com.openbravo.pos.config.JPanelConfigCzechString;
+
 /**
  *
  * @author adrianromero
@@ -17,7 +17,6 @@ public class JPanelConfiguration extends JPanel implements JPanelView {
         
     private List<PanelConfig> m_panelconfig;
     java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pos_messages");
-    private JPanelConfigCzechString cz;
 
     private AppConfig config;
     

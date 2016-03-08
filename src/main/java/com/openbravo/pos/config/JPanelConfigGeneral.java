@@ -46,7 +46,7 @@ import com.openbravo.pos.util.DirectoryEvent;
 
 public class JPanelConfigGeneral extends javax.swing.JPanel implements PanelConfig {
 
-    private JPanelConfigCzechString cz;
+
 
 
     private final DirtyManager dirty = new DirtyManager();
@@ -92,12 +92,12 @@ public class JPanelConfigGeneral extends javax.swing.JPanel implements PanelConf
             }
         });
 
-        jcboMachineScreenmode.addItem(cz.Okno);
-        jcboMachineScreenmode.addItem(cz.CelaObrazovka);
+        jcboMachineScreenmode.addItem("window");
+        jcboMachineScreenmode.addItem("fullscreen");
 
-        jcboTicketsBag.addItem(cz.Simple);
-        jcboTicketsBag.addItem(cz.Standar);
-        jcboTicketsBag.addItem(cz.Restaur);
+        jcboTicketsBag.addItem("simple");
+        jcboTicketsBag.addItem("standard");
+        jcboTicketsBag.addItem("restaurant");
     }
 
     /**
@@ -126,6 +126,7 @@ public class JPanelConfigGeneral extends javax.swing.JPanel implements PanelConf
     public void loadProperties(AppConfig config) {
 
 
+
         jtxtMachineHostname.setText(config.getProperty("machine.hostname"));
 
         String lafclass = config.getProperty("swing.defaultlaf");
@@ -140,10 +141,6 @@ public class JPanelConfigGeneral extends javax.swing.JPanel implements PanelConf
         // jcboLAF.setSelectedItem(new LookAndFeelInfo());
 
         jcboMachineScreenmode.setSelectedItem(config.getProperty("machine.screenmode"));
-        if (jcboMachineScreenmode.getSelectedItem() == cz.OknoFull) {
-            jcboMachineScreenmode.setSelectedItem(cz.OknoFull);
-            notify();
-        }
 
         jcboTicketsBag.setSelectedItem(config.getProperty("machine.ticketsbag"));
         jchkHideInfo.setSelected(Boolean.valueOf(config.getProperty("till.hideinfo")).booleanValue());        
@@ -171,23 +168,9 @@ public class JPanelConfigGeneral extends javax.swing.JPanel implements PanelConf
         /**
          * @author josefhnizdil
          */
-        if (jcboMachineScreenmode.getSelectedItem() == cz.Okno) {
-            config.setProperty("machine.screenmode", comboValue(cz.OknoAJ));
-        }
-        if (jcboMachineScreenmode.getSelectedItem() == cz.CelaObrazovka) {
-            config.setProperty("machine.screenmode", comboValue(cz.OknoFull));
-        }
 
-        if (jcboTicketsBag.getSelectedItem() == cz.Simple){
-            config.setProperty("machine.ticketsbag", comboValue(cz.jednoduch));
-        }
-
-        if (jcboTicketsBag.getSelectedItem() == cz.Standar){
-            config.setProperty("machine.ticketsbag", comboValue(cz.clasic));
-        }
-        if (jcboTicketsBag.getSelectedItem() == cz.Restaur) {
-            config.setProperty("machine.ticketsbag", comboValue(cz.restorante));
-        }
+        config.setProperty("machine.screenmode", comboValue(jcboMachineScreenmode.getSelectedItem()));
+        config.setProperty("machine.ticketsbag", comboValue(jcboTicketsBag.getSelectedItem()));
 
         config.setProperty("till.hideinfo", Boolean.toString(jchkHideInfo.isSelected()));         
         config.setProperty("start.logo", jtxtStartupLogo.getText());
@@ -278,6 +261,8 @@ public class JPanelConfigGeneral extends javax.swing.JPanel implements PanelConf
         jbtnLogoName = new javax.swing.JButton();
         jbtnLogoText = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+
+
 
         setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         setPreferredSize(new java.awt.Dimension(650, 450));

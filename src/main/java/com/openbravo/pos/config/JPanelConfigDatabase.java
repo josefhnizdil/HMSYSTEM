@@ -45,7 +45,6 @@ import java.io.IOException;
  * @author adrianromero
  */
 public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelConfig {
-    private JPanelConfigCzechString cz;
     private final DirtyManager dirty = new DirtyManager();
 
     /** Creates new form JPanelConfigDatabase */
