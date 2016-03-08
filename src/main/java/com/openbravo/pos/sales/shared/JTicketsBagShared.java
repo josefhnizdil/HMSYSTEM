@@ -249,6 +249,21 @@ public class JTicketsBagShared extends JTicketsBag {
         });
         jPanel1.add(m_jListTickets);
 
+
+        m_jTables.setFont(new java.awt.Font("Arial", 0, 11));
+        m_jTables.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/tables.png")));
+        m_jTables.setToolTipText("Rychlý pøístup ke stolùm");
+        m_jTables.setFocusPainted(false);
+        m_jTables.setFocusable(false);
+        m_jTables.setMargin(new java.awt.Insets(0, 4, 0, 4));
+        m_jTables.setMaximumSize(new java.awt.Dimension(50, 40));
+        m_jTables.setMinimumSize(new java.awt.Dimension(50, 40));
+        m_jTables.setPreferredSize(new java.awt.Dimension(50, 40));
+        m_jTables.setRequestFocusEnabled(false);
+        jPanel1.add(m_jTables);
+
+
+
         m_jHold.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         m_jHold.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/logout.png"))); // NOI18N
         m_jHold.setToolTipText("Quick LogOff");
@@ -267,19 +282,10 @@ public class JTicketsBagShared extends JTicketsBag {
         jPanel1.add(m_jHold);
 
 
-        //nové tla?ítko tables
-        m_jTables.setFont(new java.awt.Font("Arial", 0, 11));
-        m_jTables.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/tables.png")));
-        m_jTables.setToolTipText("Rychlý p?ístup ke stol?m");
-        m_jTables.setFocusPainted(false);
-        m_jTables.setFocusable(false);
-        m_jTables.setMargin(new java.awt.Insets(0, 4, 0, 4));
-        m_jTables.setMaximumSize(new java.awt.Dimension(50, 40));
-        m_jTables.setMinimumSize(new java.awt.Dimension(50, 40));
-        m_jTables.setPreferredSize(new java.awt.Dimension(50, 40));
-        m_jTables.setRequestFocusEnabled(false);
 
-        jPanel1.add(m_jTables);
+
+
+
 
 
 
