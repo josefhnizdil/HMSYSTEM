@@ -30,6 +30,8 @@ import com.openbravo.pos.sales.SharedTicketInfo;
 import com.openbravo.pos.sales.TicketsEditor;
 import com.openbravo.pos.sales.restaurant.JTicketsBagRestaurantMap;
 import com.openbravo.pos.ticket.TicketInfo;
+
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.UUID;
 import javax.swing.JComponent;
@@ -259,23 +261,6 @@ public class JTicketsBagShared extends JTicketsBag {
         jPanel1.add(m_jListTickets);
 
 
-        m_jTables.setFont(new java.awt.Font("Arial", 0, 11));
-        m_jTables.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/tables.png")));
-        m_jTables.setToolTipText("Rychlý pøístup ke stolùm");
-        m_jTables.setFocusPainted(false);
-        m_jTables.setFocusable(false);
-        m_jTables.setMargin(new java.awt.Insets(0, 4, 0, 4));
-        m_jTables.setMaximumSize(new java.awt.Dimension(50, 40));
-        m_jTables.setMinimumSize(new java.awt.Dimension(50, 40));
-        m_jTables.setPreferredSize(new java.awt.Dimension(50, 40));
-        m_jTables.setRequestFocusEnabled(false);
-        m_jTables.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });
-
-        jPanel1.add(m_jTables);
 
 
 
@@ -321,8 +306,9 @@ public class JTicketsBagShared extends JTicketsBag {
                 try {
                     List<SharedTicketInfo> l = dlReceipts.getSharedTicketList();
 //                    String itemCount = Integer.toString(l.size());
-//                    m_jListTickets.setText(itemCount);
+//                     m_jListTickets.setText(itemCount);
 //                    m_jListTickets.setIcon(null);
+
                     JTicketsBagSharedList listDialog = JTicketsBagSharedList.newJDialog(JTicketsBagShared.this);
                     String id = listDialog.showTicketsList(l); 
 
@@ -338,6 +324,8 @@ public class JTicketsBagShared extends JTicketsBag {
         });
         
     }//GEN-LAST:event_m_jListTicketsActionPerformed
+
+
 
     private void m_jDelTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jDelTicketActionPerformed
         
