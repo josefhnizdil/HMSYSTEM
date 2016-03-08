@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="windows-1252">
+    <file url="file://$PROJECT_DIR$" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/openbravo/pos/config/JPanelConfigCzechString.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/openbravo/pos/config/JPanelConfiguration.java" charset="windows-1252" />
+    <file url="PROJECT" charset="windows-1252" />
+  </component>
+</project>
