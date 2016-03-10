@@ -139,6 +139,7 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
         m_MoveTable = new javax.swing.JButton();
         m_TablePlan = new javax.swing.JButton();
         m_KitchenPrint = new javax.swing.JButton();
+        m_Privrit = new javax.swing.JButton();
 
         setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         setMinimumSize(new java.awt.Dimension(250, 50));
@@ -192,6 +193,20 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
             }
         });
         add(m_TablePlan);
+
+        m_Privrit.setText("P?iv?ít ú?et");
+        m_Privrit.setToolTipText("P?iv?ít ú?et = qucick prodej");
+        m_Privrit.setFocusPainted(false);
+        m_Privrit.setFocusable(false);
+        m_Privrit.setMargin(new java.awt.Insets(0, 4, 0, 4));
+        m_Privrit.setMaximumSize(new java.awt.Dimension(50, 40));
+        m_Privrit.setMinimumSize(new java.awt.Dimension(50, 40));
+        m_Privrit.setPreferredSize(new java.awt.Dimension(50, 40));
+        m_Privrit.setRequestFocusEnabled(false);
+
+        add(m_Privrit);
+
+
 
         m_KitchenPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/printer24.png"))); // NOI18N
         m_KitchenPrint.setToolTipText("Send to Kichen Printer");
@@ -277,6 +292,7 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
     private javax.swing.JButton m_KitchenPrint;
     private javax.swing.JButton m_MoveTable;
     private javax.swing.JButton m_TablePlan;
+    private javax.swing.JButton m_Privrit;
     // End of variables declaration//GEN-END:variables
    
     

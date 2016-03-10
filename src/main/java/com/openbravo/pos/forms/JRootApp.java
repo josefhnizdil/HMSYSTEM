@@ -229,7 +229,7 @@ public class JRootApp extends JPanel implements AppView {
         // Inicializamos la bascula
         m_Scale = new DeviceScale(this, m_props);
                
-        
+
         // Inicializamos la scanpal
         m_Scanner = DeviceScannerFactory.createInstance(m_props);
             

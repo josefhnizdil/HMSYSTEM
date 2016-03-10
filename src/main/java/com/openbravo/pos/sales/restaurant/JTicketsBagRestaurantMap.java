@@ -206,7 +206,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         
         for (Place pl : m_aplaces) {
             int iFloor = 0;
-            
+
             if (currfloor == null || !currfloor.getID().equals(pl.getFloor())) {
                 // Look for a new floor
                 do {
@@ -215,8 +215,14 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
             }
 
             currfloor.getContainer().add(pl.getButton());
+
+
+
+
+
             pl.setButtonBounds();
             pl.getButton().addActionListener(new MyActionListener(pl));
+
         }
         
         // Add the reservations panel
@@ -361,6 +367,8 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
      * @return
      */
     public boolean viewTables() {
+
+
         return viewTables(null);
     }
         
