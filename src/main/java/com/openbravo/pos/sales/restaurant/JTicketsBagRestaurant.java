@@ -40,6 +40,8 @@ import com.openbravo.pos.scripting.ScriptException;
 import com.openbravo.pos.scripting.ScriptFactory;
 import com.openbravo.pos.ticket.TicketInfo;
 import com.openbravo.pos.ticket.TicketLineInfo;
+
+import java.awt.event.ActionEvent;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -50,7 +52,8 @@ import javax.swing.*;
  * @author JG uniCenta
  */
 public class JTicketsBagRestaurant extends javax.swing.JPanel {
-    
+    java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pos_messages");
+
     private final AppView m_App;
     private final JTicketsBagRestaurantMap m_restaurant;
     private List<TicketLineInfo> m_aLines;
@@ -91,6 +94,8 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
         m_TTP2 = new TicketParser(m_App.getDeviceTicket(), m_dlSystem);     
         m_KitchenPrint.setVisible(m_App.getAppUserView().getUser().hasPermission("sales.PrintKitchen"));
         m_KitchenPrint.setVisible(false);
+
+
         
     }
 
@@ -194,15 +199,20 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
         });
         add(m_TablePlan);
 
-        m_Privrit.setText("P?iv?ít ú?et");
-        m_Privrit.setToolTipText("P?iv?ít ú?et = qucick prodej");
+        m_Privrit.setText(bundle.getString("label.ucet0"));
         m_Privrit.setFocusPainted(false);
         m_Privrit.setFocusable(false);
         m_Privrit.setMargin(new java.awt.Insets(0, 4, 0, 4));
-        m_Privrit.setMaximumSize(new java.awt.Dimension(50, 40));
+        m_Privrit.setMaximumSize(new java.awt.Dimension(70, 40));
         m_Privrit.setMinimumSize(new java.awt.Dimension(50, 40));
         m_Privrit.setPreferredSize(new java.awt.Dimension(50, 40));
         m_Privrit.setRequestFocusEnabled(false);
+        m_Privrit.addActionListener(new java.awt.event.ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                m_TablePlanActionPerformed(evt);
+            }
+        });
 
         add(m_Privrit);
 

@@ -158,9 +158,9 @@ public class Place implements SerializableRead, java.io.Serializable {
      */
     public void setButtonBounds() {
         Dimension d = m_btn.getPreferredSize();
-        m_btn.setPreferredSize(new Dimension(d.width +30,d.height + 15));
+        m_btn.setPreferredSize(new Dimension(d.width +60,d.height + 40));
         d = m_btn.getPreferredSize();
-        m_btn.setBounds(m_ix - d.width / 2, m_iy - d.height / 2, d.width, d.height); 
+        m_btn.setBounds(m_ix - d.width / 2, m_iy - d.height / 2, d.width, d.height);
     }
     
     /**
@@ -170,7 +170,18 @@ public class Place implements SerializableRead, java.io.Serializable {
     public void setButtonText(String btnText){
         m_btn.setText(btnText);         
     }
-    
+
+    /**
+     *
+     * nulovy ucet
+     */
+    public void setUcet0(){
+        {
+            if (m_ix == 0 && m_iy == 0){
+                m_btn.setVisible(false);
+            }
+        }
+    }
 }    
 
     

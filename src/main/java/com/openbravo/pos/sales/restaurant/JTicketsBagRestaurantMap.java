@@ -215,13 +215,10 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
             }
 
             currfloor.getContainer().add(pl.getButton());
-
-
-
-
-
             pl.setButtonBounds();
+            pl.setUcet0();
             pl.getButton().addActionListener(new MyActionListener(pl));
+
 
         }
         
