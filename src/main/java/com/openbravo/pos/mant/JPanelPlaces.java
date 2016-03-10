@@ -61,8 +61,13 @@ public class JPanelPlaces extends JPanelTable {
             , new Datas[] {Datas.STRING, Datas.STRING, Datas.INT, Datas.INT, Datas.STRING}
             , new Formats[] {Formats.STRING, Formats.STRING, Formats.INT, Formats.INT, Formats.NULL}
             , new int[] {0}
-        ); 
-        jeditor = new PlacesEditor(dlSales, dirty); 
+        );
+
+
+        jeditor = new PlacesEditor(dlSales, dirty);
+
+
+
     }
         
     /**

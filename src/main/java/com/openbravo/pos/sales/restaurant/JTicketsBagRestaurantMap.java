@@ -93,7 +93,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
 
     public JTicketsBagRestaurantMap(AppView app, TicketsEditor panelticket) {
 
-        super(app, panelticket);
+        super(app,panelticket );
 
 
         restDB = new  RestaurantDBUtils(app);
@@ -148,10 +148,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         };
         javax.swing.Timer timer = new javax.swing.Timer(4000, actionListener);
         timer.start();
-
-
-
-
 
         // add the Floors containers
         if (m_afloors.size() > 1) {
@@ -221,10 +217,14 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
 
 
         }
-        
+
         // Add the reservations panel
         m_jreservations = new JTicketsBagRestaurantRes(app, this);
         add(m_jreservations, "res");
+
+
+
+
     }
 
     /**

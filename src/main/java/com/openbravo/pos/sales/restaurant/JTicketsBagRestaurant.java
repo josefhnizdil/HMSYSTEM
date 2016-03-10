@@ -80,14 +80,12 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
      * @param restaurant */
     public JTicketsBagRestaurant(AppView app, JTicketsBagRestaurantMap restaurant) {
         super();
-        m_App = app;
         m_restaurant = restaurant;
+        m_App = app;
         initComponents();
 // Added by JDL for kitchen printer
-        ticketExt = null;  
-        
-        restDB = new  RestaurantDBUtils(m_App); 
-        
+        ticketExt = null;
+        restDB = new  RestaurantDBUtils(m_App);
         m_dlSystem = (DataLogicSystem) m_App.getBean("com.openbravo.pos.forms.DataLogicSystem");
 //JG July 2014 - Thank you Ron Isaacson        m_TP = new DeviceTicket();
         m_TP = new DeviceTicket(app.getProperties());        
@@ -95,9 +93,7 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
         m_KitchenPrint.setVisible(m_App.getAppUserView().getUser().hasPermission("sales.PrintKitchen"));
         m_KitchenPrint.setVisible(false);
 
-
-        
-    }
+       }
 
     /**
      *
@@ -210,11 +206,14 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
         m_Privrit.addActionListener(new java.awt.event.ActionListener(){
             @Override
             public void actionPerformed(ActionEvent evt) {
-                m_TablePlanActionPerformed(evt);
+
             }
         });
 
-        add(m_Privrit);
+
+            add(m_Privrit);
+
+
 
 
 

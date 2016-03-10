@@ -66,6 +66,7 @@ public class JTicketsBagShared extends JTicketsBag {
         dlReceipts = (DataLogicReceipts) app.getBean("com.openbravo.pos.sales.DataLogicReceipts");
         
         initComponents();
+
         
     }
 

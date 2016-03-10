@@ -92,6 +92,7 @@ public final class PlacesEditor extends JPanel implements EditorRecord {
         m_jFloor.setEnabled(false);
         m_jX.setEnabled(false);
         m_jY.setEnabled(false);
+
     }
 
     /**
@@ -110,6 +111,8 @@ public final class PlacesEditor extends JPanel implements EditorRecord {
         m_jFloor.setEnabled(true);
         m_jX.setEnabled(true);
         m_jY.setEnabled(true);
+
+
     }
 
     /**

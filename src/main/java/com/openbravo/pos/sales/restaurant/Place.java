@@ -177,6 +177,8 @@ public class Place implements SerializableRead, java.io.Serializable {
      */
     public void setUcet0(){
         {
+
+
             if (m_ix == 0 && m_iy == 0){
                 m_btn.setVisible(false);
             }

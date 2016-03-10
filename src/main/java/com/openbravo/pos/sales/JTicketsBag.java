@@ -21,6 +21,7 @@ package com.openbravo.pos.sales;
 
 import com.openbravo.pos.forms.AppView;
 import com.openbravo.pos.forms.DataLogicSales;
+import com.openbravo.pos.sales.restaurant.JTicketsBagRestaurant;
 import com.openbravo.pos.sales.restaurant.JTicketsBagRestaurantMap;
 import com.openbravo.pos.sales.shared.JTicketsBagShared;
 import com.openbravo.pos.sales.simple.JTicketsBagSimple;
@@ -99,12 +100,11 @@ public abstract class JTicketsBag extends JPanel {
     public static JTicketsBag createTicketsBag(String sName, AppView app, TicketsEditor panelticket) {
         switch (sName) {
             case "standard":
-
-
                 // return new JTicketsBagMulti(oApp, user, panelticket);
                 return new JTicketsBagShared(app, panelticket);
             case "restaurant":
                 return new JTicketsBagRestaurantMap(app, panelticket);
+
             default:
                 // "simple"
            return new JTicketsBagSimple(app, panelticket);
