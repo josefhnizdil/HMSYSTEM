@@ -30,13 +30,13 @@ import com.openbravo.pos.forms.*;
 import com.openbravo.pos.sales.*;
 import com.openbravo.pos.ticket.TicketInfo;
 import com.openbravo.pos.ticket.TicketLineInfo;
+import com.openbravo.pos.ticket.UserInfo;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
-import java.util.Timer;
 import javax.swing.*;
 
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.logging.Level;
@@ -66,9 +66,10 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         
     private java.util.List<Place> m_aplaces;
     private java.util.List<Floor> m_afloors;
-    
+
     private JTicketsBagRestaurant m_restaurantmap;  
-    private JTicketsBagRestaurantRes m_jreservations;   
+    private JTicketsBagRestaurantRes m_jreservations;
+    private UserInfo uzivatel;
     
     private Place m_PlaceCurrent;
 
@@ -144,7 +145,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
 
         initComponents();
 
-        /** v pripade provozovny s jedním terminálem disablovat tento segment kodu
+        /** v pripade provozovny s jedním terminálem disablovat tento segment kodu*/
 
 
         ActionListener actionListener = new ActionListener() {
@@ -157,7 +158,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
             }
         };
         javax.swing.Timer timer = new javax.swing.Timer(4000, actionListener);
-        timer.start();*/
+        timer.start();
 
         // add the Floors containers
         if (m_afloors.size() > 1) {
@@ -242,20 +243,18 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
                 }
             }
             );
-
-
             pl.getButton().addActionListener(new MyActionListener(pl));
         }
-
         // Add the reservations panel
         m_jreservations = new JTicketsBagRestaurantRes(app, this);
         add(m_jreservations, "res");
+       m_btnSavePlaces.setVisible(false);
 
-       // m_btnSavePlaces.setVisible(false);
-       //m_btnSetupMode.setVisible(AppConfig.getInstance().getBoolean("tables.redesign"));
+        m_btnSetupMode.setVisible(m_App.getAppUserView().getUser().hasPermission("com.openbravo.pos.sales.JPanelTicketEdits"));
 
 
     }
+
 
     /**
      *
@@ -278,7 +277,15 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         
         // postcondicion es que tenemos ticket activado aqui y ticket en el panel
     }
-    
+
+
+
+    public void activateUcet0(){
+    activate();
+
+    }
+
+
     /**
      *
      * @return
@@ -840,6 +847,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         m_jText = new javax.swing.JLabel();
         m_btnSetupMode = new javax.swing.JButton();
         m_btnSavePlaces = new javax.swing.JButton();
+        m_ucetNula = new javax.swing.JButton();
 
         setLayout(new java.awt.CardLayout());
 
@@ -891,9 +899,9 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         m_btnSetupMode.setFocusPainted(false);
         m_btnSetupMode.setFocusable(false);
         m_btnSetupMode.setMargin(new java.awt.Insets(8, 14, 8, 14));
-        m_btnSetupMode.setMaximumSize(new java.awt.Dimension(100, 40));
-        m_btnSetupMode.setMinimumSize(new java.awt.Dimension(100, 40));
-        m_btnSetupMode.setPreferredSize(new java.awt.Dimension(150, 40));
+        m_btnSetupMode.setMaximumSize(new java.awt.Dimension(100, 20));
+        m_btnSetupMode.setMinimumSize(new java.awt.Dimension(100, 20));
+        m_btnSetupMode.setPreferredSize(new java.awt.Dimension(150, 20));
         m_btnSetupMode.setRequestFocusEnabled(false);
         m_btnSetupMode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -909,16 +917,42 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         m_btnSavePlaces.setFocusPainted(false);
         m_btnSavePlaces.setFocusable(false);
         m_btnSavePlaces.setMargin(new java.awt.Insets(8, 14, 8, 14));
-        m_btnSavePlaces.setMaximumSize(new java.awt.Dimension(100, 40));
-        m_btnSavePlaces.setMinimumSize(new java.awt.Dimension(100, 40));
-        m_btnSavePlaces.setPreferredSize(new java.awt.Dimension(100, 40));
+        m_btnSavePlaces.setMaximumSize(new java.awt.Dimension(100, 20));
+        m_btnSavePlaces.setMinimumSize(new java.awt.Dimension(100, 20));
+        m_btnSavePlaces.setPreferredSize(new java.awt.Dimension(100, 20));
         m_btnSavePlaces.setRequestFocusEnabled(false);
         m_btnSavePlaces.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                m_btnSavePlacesActionPerformed(evt);
+
+
+
             }
         });
         jPanel2.add(m_btnSavePlaces);
+
+
+        m_ucetNula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        //m_btnSavePlaces.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uk/chromis/images/filesave.png"))); // NOI18N
+        m_ucetNula.setText(AppLocal.getIntString("label.ucet0")); // NOI18N
+        m_ucetNula.setToolTipText("");
+        m_ucetNula.setFocusPainted(false);
+        m_ucetNula.setFocusable(false);
+        m_ucetNula.setMargin(new java.awt.Insets(8, 14, 8, 14));
+        m_ucetNula.setMaximumSize(new java.awt.Dimension(100, 20));
+        m_ucetNula.setMinimumSize(new java.awt.Dimension(100, 20));
+        m_ucetNula.setPreferredSize(new java.awt.Dimension(100, 20));
+        m_ucetNula.setRequestFocusEnabled(false);
+        m_ucetNula.addActionListener(new java.awt.event.ActionListener() {
+
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+
+
+
+            }
+        });
+        jPanel2.add(m_ucetNula);
+
 
 
         jPanel2.add(m_jText);
@@ -1004,6 +1038,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
     private javax.swing.JButton m_jbtnReservations;
     private javax.swing.JButton m_btnSetupMode;
     private javax.swing.JButton m_btnSavePlaces;
+    private javax.swing.JButton m_ucetNula;
     // End of variables declaration//GEN-END:variables
     
 }

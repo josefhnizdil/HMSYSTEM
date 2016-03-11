@@ -291,7 +291,7 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
                     }else{
                         ((JRootApp)m_App).closeAppView();
                     };    
-                    }    
+                    }
                 }
     }//GEN-LAST:event_m_KitchenPrintActionPerformed
   

@@ -30,16 +30,20 @@ public class UserInfo implements Serializable {
     private final String m_sId;
     private final String m_sName;
 
-    /** Creates a new instance of UserInfoBasic
+
+    /**
+     * Creates a new instance of UserInfoBasic
+     *
      * @param id
-     * @param name */
+     * @param name
+     */
     public UserInfo(String id, String name) {
         m_sId = id;
         m_sName = name;
+
     }
 
     /**
-     *
      * @return
      */
     public String getId() {
@@ -47,10 +51,10 @@ public class UserInfo implements Serializable {
     }
 
     /**
-     *
      * @return
      */
     public String getName() {
         return m_sName;
     }
-}
+
+    }
