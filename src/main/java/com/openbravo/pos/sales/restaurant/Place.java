@@ -52,7 +52,10 @@ public class Place implements SerializableRead, java.io.Serializable {
     
     private boolean m_bPeople;
     private JButton m_btn;
-        
+
+    private int m_diffx;
+    private int m_diffy;
+
     /** Creates a new instance of TablePlace */
     public Place() {
     }
@@ -86,6 +89,10 @@ public class Place implements SerializableRead, java.io.Serializable {
         m_btn.setText(m_sName);
         m_btn.setMargin(new Insets(2,5,2,5));
 
+
+        m_diffx=0;
+        m_diffy=0;
+
     }
 
     /**
@@ -100,17 +107,37 @@ public class Place implements SerializableRead, java.io.Serializable {
      */
     public String getName() { return m_sName; }
 
-    /**
-     *
-     * @return
-     */
-    public int getX() { return m_ix; }
+    public int getX() {
+        return m_ix;
+    }
 
-    /**
-     *
-     * @return
-     */
-    public int getY() { return m_iy; }
+    public int getY() {
+        return m_iy;
+    }
+
+    public void setX(int x) {
+        this.m_ix = x;
+    }
+
+    public void setY(int y) {
+        this.m_iy = y;
+    }
+
+    public int getDiffX() {
+        return m_diffx;
+    }
+
+    public int getDiffY() {
+        return m_diffy;
+    }
+
+    public void setDiffX(int x) {
+        this.m_diffx = x;
+    }
+
+    public void setDiffY(int y) {
+        this.m_diffy = y;
+    }
 
     /**
      *
@@ -142,7 +169,8 @@ public class Place implements SerializableRead, java.io.Serializable {
      */
     public boolean hasPeople() {
         return m_bPeople;
-    }   
+    }
+
 
     /**
      *
@@ -177,8 +205,6 @@ public class Place implements SerializableRead, java.io.Serializable {
      */
     public void setUcet0(){
         {
-
-
             if (m_ix == 0 && m_iy == 0){
                 m_btn.setVisible(false);
             }

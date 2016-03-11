@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Thu Mar 10 21:58:13 CET 2016:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0153-6252-9878-00000cb36f78 
-on database directory C:\Users\josefhnizdil\hmsystems-database with class loader sun.misc.Launcher$AppClassLoader@41cf53f9 
-Loaded from file:/C:/Users/josefhnizdil/.m2/repository/org/apache/derby/derby/10.10.2.0/derby-10.10.2.0.jar
+Fri Mar 11 10:43:07 CET 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0153-650e-df2e-000003371f80 
+on database directory /Users/pepa/hmsystems-database with class loader sun.misc.Launcher$AppClassLoader@4b85612c 
+Loaded from file:/Users/pepa/.m2/repository/org/apache/derby/derby/10.10.2.0/derby-10.10.2.0.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_73-b02
-user.dir=C:\Vyvoj\hmsystem\HMSYSTEM
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
+java.runtime.version=1.8.0_60-b27
+user.dir=/Users/pepa/Documents/Vy?voj/Final/unicentaopos-3.91.3-source
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.11.3
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''

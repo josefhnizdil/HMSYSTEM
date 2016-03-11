@@ -34,7 +34,7 @@ import java.util.logging.Logger;
 public class AppConfig implements AppProperties {
 
     private static final Logger logger = Logger.getLogger("com.openbravo.pos.forms.AppConfig");
-     
+    private static AppConfig instance = null;
     private static AppConfig m_instance = null;
     private Properties m_propsconfig;
     private File configfile;
@@ -87,6 +87,29 @@ public class AppConfig implements AppProperties {
     @Override
     public String getHost() {
         return getProperty("machine.hostname");
+    }
+
+
+
+    public static AppConfig getInstance() {
+        if (instance == null) {
+            instance = new AppConfig(new File(System.getProperty("user.home"), AppLocal.APP_ID + ".properties"));
+        }
+        return instance;
+    }
+
+    public void setBoolean(String sKey, Boolean sValue) {
+        if (sValue == null) {
+            m_propsconfig.remove(sKey);
+        } else if (sValue) {
+            m_propsconfig.setProperty(sKey, "true");
+        } else {
+            m_propsconfig.setProperty(sKey, "false");
+        }
+    }
+
+    public Boolean getBoolean(String sKey) {
+        return Boolean.valueOf(m_propsconfig.getProperty(sKey));
     }
 
     /**
