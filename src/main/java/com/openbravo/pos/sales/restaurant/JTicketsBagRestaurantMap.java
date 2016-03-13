@@ -924,7 +924,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         m_btnSavePlaces.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
-
+                m_btnSavePlacesActionPerformed(evt);
 
             }
         });
