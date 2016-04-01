@@ -475,7 +475,8 @@ CREATE TABLE FLOORS (
     PRIMARY KEY (ID)
 );
 CREATE UNIQUE INDEX FLOORS_NAME_INX ON FLOORS(NAME);
-INSERT INTO FLOORS(ID, NAME, IMAGE) VALUES ('0', 'Restaurant floor', $FILE{/com/openbravo/pos/templates/restaurant_floor.png});
+INSERT INTO FLOORS(ID, NAME, IMAGE) VALUES ('0', 'BAR', $FILE{/com/openbravo/pos/templates/restaurant_floor.png});
+INSERT INTO FLOORS(ID, NAME, IMAGE) VALUES ('1', 'Restaurace', $FILE{/com/openbravo/pos/templates/restaurant_floor.png});
 
 CREATE TABLE PLACES (
     ID VARCHAR(256) NOT NULL,
@@ -493,7 +494,7 @@ CREATE TABLE PLACES (
 CREATE UNIQUE INDEX PLACES_NAME_INX ON PLACES(NAME);
 
 INSERT INTO PLACES(ID, NAME, X, Y, FLOOR) VALUES ('1', 'ucet0', 0, 0, '0');
-INSERT INTO PLACES(ID, NAME, X, Y, FLOOR) VALUES ('2', 'Table 2', 250, 75, '0');
+INSERT INTO PLACES(ID, NAME, X, Y, FLOOR) VALUES ('2', 'Table 2', 250, 75, '1');
 
 
 

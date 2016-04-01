@@ -36,6 +36,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
+import javax.swing.border.Border;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -95,7 +96,9 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
     private int newX;
     private int newY;
     private AppView m_app;
-    
+    private Boolean stulNula = false;
+
+
     /** Creates new form JTicketsBagRestaurant
      * @param app
      * @param panelticket */
@@ -200,7 +203,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
             JPanel jPanCont = new JPanel();
             jPanCont.applyComponentOrientation(getComponentOrientation());
             
-            // jPlaces.setLayout(new FlowLayout());           
+            //jPlaces.setLayout(new FlowLayout());
             m_jPanelMap.add(jPlaces, BorderLayout.CENTER);
             jPlaces.add(jScrCont, BorderLayout.CENTER);
             jScrCont.setViewportView(jPanCont);            
@@ -223,7 +226,7 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
 
             currfloor.getContainer().add(pl.getButton());
             pl.setButtonBounds();
-            //pl.setUcet0();
+
 
             pl.getButton().addMouseMotionListener(new MouseAdapter() {
 
@@ -243,13 +246,13 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
                 }
             }
             );
+            pl.setUcet0();
             pl.getButton().addActionListener(new MyActionListener(pl));
         }
         // Add the reservations panel
         m_jreservations = new JTicketsBagRestaurantRes(app, this);
         add(m_jreservations, "res");
-       m_btnSavePlaces.setVisible(false);
-
+        m_btnSavePlaces.setVisible(false);
         m_btnSetupMode.setVisible(m_App.getAppUserView().getUser().hasPermission("com.openbravo.pos.sales.JPanelTicketEdits"));
 
 
@@ -276,13 +279,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         showView("map"); // arrancamos en la vista de las mesas.
         
         // postcondicion es que tenemos ticket activado aqui y ticket en el panel
-    }
-
-
-
-    public void activateUcet0(){
-    activate();
-
     }
 
 
@@ -847,7 +843,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         m_jText = new javax.swing.JLabel();
         m_btnSetupMode = new javax.swing.JButton();
         m_btnSavePlaces = new javax.swing.JButton();
-        m_ucetNula = new javax.swing.JButton();
 
         setLayout(new java.awt.CardLayout());
 
@@ -931,28 +926,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         jPanel2.add(m_btnSavePlaces);
 
 
-        m_ucetNula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        //m_btnSavePlaces.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uk/chromis/images/filesave.png"))); // NOI18N
-        m_ucetNula.setText(AppLocal.getIntString("label.ucet0")); // NOI18N
-        m_ucetNula.setToolTipText("");
-        m_ucetNula.setFocusPainted(false);
-        m_ucetNula.setFocusable(false);
-        m_ucetNula.setMargin(new java.awt.Insets(8, 14, 8, 14));
-        m_ucetNula.setMaximumSize(new java.awt.Dimension(100, 20));
-        m_ucetNula.setMinimumSize(new java.awt.Dimension(100, 20));
-        m_ucetNula.setPreferredSize(new java.awt.Dimension(100, 20));
-        m_ucetNula.setRequestFocusEnabled(false);
-        m_ucetNula.addActionListener(new java.awt.event.ActionListener() {
-
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-
-
-
-            }
-        });
-        jPanel2.add(m_ucetNula);
-
 
 
         jPanel2.add(m_jText);
@@ -962,6 +935,11 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         m_jPanelMap.add(jPanel1, java.awt.BorderLayout.NORTH);
 
         add(m_jPanelMap, "map");
+
+
+
+
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void m_jbtnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jbtnRefreshActionPerformed
@@ -1025,6 +1003,13 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
         }
     }//GEN-LAST:event_m_btnSavePlacesActionPerformed
 
+    public void autoClickUcetNula(){
+        JOptionPane.showMessageDialog(null, "zavolani metody");
+
+
+
+    }
+
 
 
 
@@ -1038,7 +1023,6 @@ public class JTicketsBagRestaurantMap extends JTicketsBag {
     private javax.swing.JButton m_jbtnReservations;
     private javax.swing.JButton m_btnSetupMode;
     private javax.swing.JButton m_btnSavePlaces;
-    private javax.swing.JButton m_ucetNula;
     // End of variables declaration//GEN-END:variables
     
 }

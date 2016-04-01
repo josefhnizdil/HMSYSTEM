@@ -19,16 +19,13 @@
 
 package com.openbravo.pos.sales.restaurant;
 
-import java.awt.Dimension;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.SwingConstants;
+import java.awt.*;
+import javax.swing.*;
+
 import com.openbravo.data.gui.NullIcon;
 import com.openbravo.data.loader.DataRead;
 import com.openbravo.data.loader.SerializableRead;
 import com.openbravo.basic.BasicException;
-import java.awt.Insets;
 
 /**
  *
@@ -55,6 +52,11 @@ public class Place implements SerializableRead, java.io.Serializable {
 
     private int m_diffx;
     private int m_diffy;
+
+
+
+    private int osax = 500;
+    private int osay = 500;
 
     /** Creates a new instance of TablePlace */
     public Place() {
@@ -105,6 +107,25 @@ public class Place implements SerializableRead, java.io.Serializable {
      *
      * @return
      */
+
+    public int getOsax() {
+        return osax;
+    }
+
+    public void setOsax(int osax) {
+        this.osax = osax;
+    }
+
+    public int getOsay() {
+        return osay;
+    }
+
+    public void setOsay(int osay) {
+        this.osay = osay;
+    }
+
+
+
     public String getName() { return m_sName; }
 
     public int getX() {
@@ -205,11 +226,22 @@ public class Place implements SerializableRead, java.io.Serializable {
      */
     public void setUcet0(){
         {
-            if (m_ix == 0 && m_iy == 0){
-                m_btn.setVisible(false);
+            if ( m_iy == 0 && m_ix == 0) {
+
+                Dimension d = m_btn.getPreferredSize();
+                m_btn.setPreferredSize(new Dimension(d.width + 850, d.height + 510));
+                d = m_btn.getPreferredSize();
+                m_btn.setBounds(m_ix - d.width / 850, m_iy - d.height / 510, d.width, d.height);
+
+
             }
+
+        
         }
     }
-}    
+
+
+
+}
 
     

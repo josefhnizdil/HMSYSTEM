@@ -63,7 +63,8 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
     private DataLogicSystem m_dlSystem = null;
     private final DeviceTicket m_TP;   
     private final TicketParser m_TTP2; 
-    private final RestaurantDBUtils restDB;    
+    private final RestaurantDBUtils restDB;
+
     
     private final DataLogicSystem dlSystem = null;
     private TicketParser m_TTP; 
@@ -195,6 +196,7 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
         });
         add(m_TablePlan);
 
+       /*
         m_Privrit.setText(bundle.getString("label.ucet0"));
         m_Privrit.setFocusPainted(false);
         m_Privrit.setFocusable(false);
@@ -206,14 +208,14 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
         m_Privrit.addActionListener(new java.awt.event.ActionListener(){
             @Override
             public void actionPerformed(ActionEvent evt) {
-
+                ucetNulaActionPerformed(evt);
             }
         });
 
 
             add(m_Privrit);
 
-
+        */
 
 
 
@@ -295,7 +297,18 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
                 }
     }//GEN-LAST:event_m_KitchenPrintActionPerformed
   
-      
+
+    private void ucetNulaActionPerformed(java.awt.event.ActionEvent evt){
+        m_restaurant.newTicket();
+        m_restaurant.autoClickUcetNula();
+
+
+
+
+    }
+
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton m_DelTicket;
     private javax.swing.JButton m_KitchenPrint;
